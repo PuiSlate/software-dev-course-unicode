@@ -16,6 +16,12 @@ let inputString = "Hi";
 Expected Output:
 sumCodePoints: 177 // 'H' = 72, 'i' = 105, 72 + 105 = 177
 
+let inputString = "Hi";
+let firstCodePoint = inputString.charCodeAt(0);
+let lastCodePoint = inputString.charCodeAt(1);
+let sumCodePoints = firstCodePoint + lastCodePoint;
+console.log(sumCodePoints);
+
 Exercise 2: Generate a String from Two Code Points
 Objective: Take two numeric Unicode code points,
 convert them to characters using String.fromCharCode,
@@ -31,6 +37,13 @@ let codePoint2 = 66;
 
 Expected Output:
 combinedString: "AB" // 65 = 'A', 66 = 'B', combined = "AB"
+
+let codePoint1 = 65;
+let codePoint2 = 66;
+let codePoints = [65, 66];
+let combinedString = String.fromCharCode(codePoints[0])+String.fromCharCode(codePoints[1]);
+console.log(combinedString);
+
 
 Exercise 3: Find the Character Difference
 Objective: Extract the Unicode code points of two given characters from a string
@@ -48,7 +61,12 @@ let index2 = 2;
 Expected Output:
 codePointDifference: 16 // 'C' = 67, 't' = 116, |67 - 116| = 16
 
-
+let inputString = "Cat";
+let index1 = 0;
+let index2 = 2;
+let codePointDifference = Math.abs(inputString.charCodeAt(index1) - inputString.charCodeAt(index2));
+console.log(codePointDifference);
+//output = 49
 
 Practice Problem #2
 
@@ -70,6 +88,7 @@ Take the string "Code".
 Use charCodeAt to extract the Unicode code points of the first and third characters.
 Assign the results to variables named firstCodePoint and thirdCodePoint.
 
+
 Task 2: Create a Word from Code Points
 Use the Unicode code points 72, 101, 108, and 108 (corresponding to the characters H, e, l, and l).
 Use String.fromCharCode to create the word "Hell".
@@ -86,20 +105,31 @@ Assign the result to a variable named swappedString.
 //Starter Code
 // Task 1
 let inputString1 = "Code";
-let firstCodePoint; // Your code here
-let thirdCodePoint; // Your code here
+let firstCodePoint = inputString1.char.charCodeAt(0);
+let thirdCodePoint = inputString1.char.charCodeAt(2);
+console.log(firstCodePoint); //code point of 'C' //67
+console.log(thirdCodePoint); //code point of 'd' //100
+
 
 // Task 2
-let wordFromCodePoints; // Your code here
+let codePoints = [72,101,108,108];
+let wordFromCodePoints = String.fromCharCode(codePoints[0]) + String.fromCharCode(codePoints[1])+String.fromCharCode(codePoints[2])
++String.fromCharCode(codePoints[3]);
+console.log(wordFromCodePoints); // Hell
+
 
 // Task 3
+
 let inputString2 = "Launch";
-let swappedString; // Your code here
+let firstCode = inputString2.charCodeAt(0); // code point of 'L'
+let lastCode = inputString2.charCodeAt(5); // code pint of 'h'
+let swappedString = lastCode + "aunc" + firstCode;
+console.log(swappedString); // "hauncL"
 
 // Log all results
 console.log({
-  firstCodePoint,
-  thirdCodePoint,
-  wordFromCodePoints,
-  swappedString,
+  firstCodePoint, // code point of 'C' //67
+  thirdCodePoint, // code point of 'd' //100
+  wordFromCodePoints, // Hell
+  swappedString, // "hauncL"
 });
